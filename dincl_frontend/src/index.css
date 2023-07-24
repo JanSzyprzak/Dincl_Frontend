@@ -1,0 +1,69 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, #00AAFF, #00FF6c);
+
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15rem;
+
+
+}
+  
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+  padding: 2rem;
+  border-color: black;
+  border-style: solid; 
+  
+
+}
+
+.component {
+  flex: 1;
+  border-color: grey;
+  border-style: solid; 
+  padding: 2rem;
+ 
+}
+
+
+
+
+
+
+
+/*
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 26rem);
+  grid-template-rows: repeat(5, 6rem);
+  padding: 14rem;
+}  
+/*
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0,0,0,.75);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: .75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
