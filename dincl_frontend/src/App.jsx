@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ModalWrapper from './components/ModalWrapper';
 import DonateComponent from './components/Donate'
 import DinclMapComponent from './components/DinclMap'
 import CBOSReportComponent from './components/CBOSReport'
@@ -13,6 +14,20 @@ import AllSurveysDataFetchComponent from './components/AllSurveysDataFetch'
 
 
 function App() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalComponent, setModalComponent] = useState(null);
+
+  const openModal = (component) => {
+    setModalComponent(component);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalComponent(null);
+    setIsModalOpen(false);
+  };
+
 
   return (
     <div className="container">
@@ -32,9 +47,12 @@ function App() {
         <AskYourGroupComponent className="component" />
       </div>
       <div className="row">
-        <DonateComponent className="component" />
+        <button onClick={() => openModal(<DonateComponent className="component"/>)}>Open Donate Modal</button>
         <PolicyComponent className="component" />
       </div>
+      <ModalWrapper isOpen={isModalOpen} onClose={closeModal}>
+        {modalComponent}
+      </ModalWrapper>
     </div>
   )
 }

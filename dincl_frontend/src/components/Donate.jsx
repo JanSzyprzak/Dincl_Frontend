@@ -5,7 +5,7 @@ import '../index.css';
 const DonateComponent = () => {
   return (
     <div className="component">
-      <a href="/wesprzyj">Przekaż darowiznę</a>
+      <a href="/wesprzyj">Przekaż darowiznę w modalu</a>
     </div>
   );
 };
