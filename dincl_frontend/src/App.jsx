@@ -1,4 +1,7 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 import { useState } from 'react'
+
 import ModalWrapper from './components/ModalWrapper';
 import DonateComponent from './components/Donate'
 import DinclMapComponent from './components/DinclMap'
@@ -32,29 +35,53 @@ function App() {
   return (
     <div className="container">
       <div className="row">
-        <DinclMapComponent className="component" />
-        <CBOSReportComponent className="component" />
-        <EntriesCounterComponent className="component" />
+        <div className="btncomponent">
+          <DinclMapComponent className="button" />
+        </div>
+        
+        <div className="btncomponent">
+          <EntriesCounterComponent className="button"/>
+        </div>
       </div>
       <div className="row">
-        <FillSurveyComponent className="component" />
-        <AllSurveysDataFetchComponent className="component" />
-        <Top5WeeklyDataFetchComponent className="component" />
+        <div className="btncomponent">
+          <Button className="button" onClick={() => openModal(<FillSurveyComponent />)}>Wypełnij ankietę</Button>
+        </div>
+        <div className="btncomponent">
+          <Button className="button" onClick={() => openModal(<AllSurveysDataFetchComponent />)}>Wszystkie ankiety</Button>
+        </div>
+        <div className="btncomponent">
+          <Button className="button" onClick={() => openModal(<Top5WeeklyDataFetchComponent />)}>Top 5 tygodniowo</Button>
+        </div>
       </div>
       <div className="row">
-        <Top5MonthlyDataFetchComponent className="component" />
-        <EmoChatComponent className="component" />
-        <AskYourGroupComponent className="component" />
+        <div className="btncomponent">
+          <Button className="button" onClick={() => openModal(<Top5MonthlyDataFetchComponent />)}>Top 5 miesięcznie</Button>
+        </div>
+        <div className="btncomponent">
+          <Button className="button" onClick={() => openModal(<EmoChatComponent />)}>Emo Chat</Button>
+        </div>
+        <div className="btncomponent">
+          <Button className="button" onClick={() => openModal(<AskYourGroupComponent />)}>Zapytaj swoją grupę</Button>
+        </div>
       </div>
       <div className="row">
-        <button onClick={() => openModal(<DonateComponent className="component"/>)}>Open Donate Modal</button>
-        <PolicyComponent className="component" />
+        <div className="btncomponent">
+          <Button className="button" onClick={() => openModal(<DonateComponent />)}>Open Donate Modal</Button>
+        </div>
+        <div className="btncomponent">
+          <CBOSReportComponent className="button" />
+        </div>
+        <div className="btncomponent">
+          <Button className="button" onClick={() => openModal(<PolicyComponent />)}>Warunki korzystania i polityka prywatności</Button>
+        </div>
       </div>
       <ModalWrapper isOpen={isModalOpen} onClose={closeModal}>
         {modalComponent}
       </ModalWrapper>
     </div>
   )
+  
 }
 
 export default App

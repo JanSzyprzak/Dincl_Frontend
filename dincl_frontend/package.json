@@ -2,6 +2,7 @@
   "name": "dincl_frontend",
   "private": true,
   "version": "0.0.0",
+  "proxy": "http://localhost:8000",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,13 +11,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-leaflet/core": "^2.1.0",
     "axios": "^1.4.0",
+    "bootstrap": "^5.3.1",
+    "leaflet": "^1.9.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-bootstrap": "^2.8.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.4",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.32.2",

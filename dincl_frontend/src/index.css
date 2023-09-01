@@ -3,10 +3,16 @@
 }
 
 body {
+  background: rgb(253, 251, 247);
   margin: 0;
-  background: linear-gradient(to right, #00AAFF, #00FF6c);
-
+  padding: 0;
+  height: 100vh; /* Adjust height to viewport height */
+  width: 100%;
+  display: flex; /* Add flex display */
+  justify-content: center; /* Center children along the main axis (horizontally) */
+  align-items: center; /* Center children along the cross axis (vertically) */
 }
+
 
 
 .container {
@@ -14,7 +20,10 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 15rem;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 
 
 }
@@ -24,22 +33,62 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  flex: 1;
-  padding: 2rem;
-  border-color: black;
-  border-style: solid; 
+  align-items: stretch;
+  padding: 1rem;
+ 
+  width: 100%;
   
 
 }
 
-.component {
+.btncomponent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   flex: 1;
-  border-color: grey;
-  border-style: solid; 
-  padding: 2rem;
+  background-color: white;
  
+  border-radius: 5% 5%;
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  
+  /*word-wrap: break-word; /* Break long words */
+  /*overflow-wrap: break-word; /* Same as word-wrap, newer name */
+  /*white-space: normal; /* Allow wrapping */
+  /*overflow: hidden; /* Hide any overflowing content */
+  
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+
+}
+.btncomponent:hover {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.10);
 }
 
+.button {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  flex: 0 1 auto; /* Don't grow, shrink if necessary, base size on content */
+  max-width: 100%;
+  background-color: aliceblue;
+  color: black;
+  border: none;
+  font-size: xx-large;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.big-font {
+  color: black;
+  border: none;
+  font-size: xx-large;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  background-color: aliceblue;
+}
 
 .overlay {
   position: fixed;
@@ -64,3 +113,4 @@ body {
   max-height: 90%; /* To ensure it doesn't take up the full height of the screen */
   overflow-y: auto; /* Scroll if content is too long */
 }
+
