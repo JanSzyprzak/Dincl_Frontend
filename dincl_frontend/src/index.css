@@ -45,8 +45,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  flex: 1;
+  border-color: black;
+  border-style: dashed; 
   background-color: white;
  
   border-radius: 5% 5%;
@@ -66,6 +66,35 @@ body {
 .btncomponent:hover {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.10);
 }
+
+.btncomponent2 {
+  display: flex;
+  border-color: black;
+  border-style: dotted;
+  justify-content: center;
+  align-items: stretch;
+  align-items: center;
+  width: 100%;
+  border-radius: 5% 5%;
+
+}
+
+.btncomponent3 {
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex1 {
+  flex: 1
+}
+
+.flex2 {
+  flex: 2
+}
+
+
 
 .button {
   box-sizing: border-box;

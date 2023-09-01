@@ -30,7 +30,7 @@ const DinclMapComponent = () => {
     return (
         <div className="component">
             <h6>Najedź na region</h6>
-            <MapContainer center={[51.8965, 19.0000]} zoom={4} style={{ height: "20vh", width: "100%" }}>
+            <MapContainer center={[51.8965, 19.0000]} zoom={6} style={{ height: "60vh", width: "60vh" }}>
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                 <GeoJSON data={data} onEachFeature={onEachFeature} style={geoJsonStyle} />
             </MapContainer>
