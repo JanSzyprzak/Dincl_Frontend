@@ -138,8 +138,15 @@ body {
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1001; /* Value higher than the overlay to ensure the modal is on top */
-  max-width: 90%; /* To ensure it doesn't take up the full width of the screen */
-  max-height: 90%; /* To ensure it doesn't take up the full height of the screen */
+  max-width: 50%; /* To ensure it doesn't take up the full width of the screen */
+  max-height: 50%; /* To ensure it doesn't take up the full height of the screen */
   overflow-y: auto; /* Scroll if content is too long */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%; /* center the modal vertically */
+  left: 50%; /* center the modal horizontally */
+  transform: translate(-50%, -50%); /* ensures true centering */
 }
 
