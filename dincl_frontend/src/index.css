@@ -150,3 +150,21 @@ body {
   transform: translate(-50%, -50%); /* ensures true centering */
 }
 
+/* Base tooltip styling */
+.leaflet-tooltip {
+  background-color: rgba(0, 0, 0, 0.75); /* semi-transparent black */
+  border-radius: 4px;
+  color: #ffffff; /* white text */
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+  padding: 4px 8px;
+}
+
+/* Remove the default Leaflet tooltip arrow */
+.leaflet-tooltip:before {
+  border: none !important;
+}
+
+.my-custom-tooltip {
+  width: 300px;
+  height: 150px;
+}

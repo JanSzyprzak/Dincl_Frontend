@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Pie } from "react-chartjs-2"; // Import the Pie component
 import "../index.css";
+import { Pie } from "react-chartjs-2"; // Import the Pie component
 import { Chart, PieController, ArcElement, CategoryScale } from "chart.js";
 import datalabels from 'chartjs-plugin-datalabels';
 
