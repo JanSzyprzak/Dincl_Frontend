@@ -75,7 +75,7 @@ function App() {
                  </div>
             </div>
             <div className="row">
-                <div className="btncomponent flex1">
+                <div className="btncomponent flex1">      
                     <Button
                         className="button"
                         onClick={() =>
@@ -84,6 +84,7 @@ function App() {
                     >
                         Top 5 miesięcznie
                     </Button>
+                    
                 </div>
                 <div className="btncomponent flex1">
                     <Button

@@ -6,7 +6,6 @@ const AllSurveysDataFetchComponent = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [showPopup, setShowPopup] = useState(false);
   const [totalItems, setTotalItems] = useState(0); // State to store the total number of items
 
   useEffect(() => {
@@ -37,14 +36,6 @@ const AllSurveysDataFetchComponent = () => {
     Promise.all([fetchData(), fetchCount()]); // Fetch both data and count concurrently
   }, []);
 
-  const handleShowPopup = () => {
-    setShowPopup(true);
-  };
-
-  const handleClosePopup = () => {
-    setShowPopup(false);
-  };
-
   if (loading) {
     return <div className="component">Loading...</div>;
   }
@@ -55,22 +46,13 @@ const AllSurveysDataFetchComponent = () => {
 
   return (
     <div className="component">
-      {!showPopup ? (
-        <div>
-          <button onClick={handleShowPopup}>Przeglądaj bazę</button>
-          <p>Total items: {totalItems}</p> {/* Display the total number of items */}
-        </div>
-      ) : (
-        <div className="popup">
-          <button onClick={handleClosePopup}>Close</button>
-          <h2>Data from API:</h2>
-          <ul>
-            {data.map(item => (
-              <li key={item.id}>{`ID: ${item.id}, Voivodship: ${item.voivodship}`}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <h2>Data from API:</h2>
+      <ul>
+        {data.map(item => (
+          <li key={item.id}>{`ID: ${item.id}, Voivodship: ${item.voivodship}`}</li>
+        ))}
+      </ul>
+      <p>Total items: {totalItems}</p> {/* Display the total number of items */}
     </div>
   );
 };

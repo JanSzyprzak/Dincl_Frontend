@@ -1,26 +1,8 @@
-`import React from 'react';
-import '../index.css';
-
-
-const FillSurveyComponent = () => {
-  return (
-    <div className="component">
-      <a href="/ankieta">Wypełnij ankietę</a>
-    </div>
-  );
-};
-
-export default FillSurveyComponent;`
-
-
-
-
 import React, { useState } from 'react';
-import {AGE_CHOICES, GENDER_CHOICES, VOIVODSHIP_CHOICES, CITY_SIZE_CHOICES, GROUP_CHOICES, RATING_CHOICES} from '../constants/Choices.jsx';
+import { AGE_CHOICES, GENDER_CHOICES, VOIVODSHIP_CHOICES, CITY_SIZE_CHOICES, GROUP_CHOICES, RATING_CHOICES } from '../constants/Choices.jsx';
 import '../index.css';
 
 const FillSurveyComponent = () => {
-  
 
   const [formData, setFormData] = useState({
     age: '',
@@ -40,17 +22,10 @@ const FillSurveyComponent = () => {
     minority_security_feeling: '',
   });
 
-  const [showForm, setShowForm] = useState(false);
-
-  const handleShowForm = () => {
-    setShowForm(true);
-  };
-
   const handleFormSubmit = (event) => {
     event.preventDefault();
     // Here, you can submit the form data to the server or handle it as needed
     console.log(formData);
-    setShowForm(false); // Hide the form after submission
   };
 
   const handleChange = (event) => {
@@ -61,14 +36,8 @@ const FillSurveyComponent = () => {
     });
   };
 
-  const renderForm = () => {
-    if (!showForm) {
-      return (
-        <button onClick={handleShowForm}>Wypełnij ankietę</button>
-      );
-    }
-
-    return (
+  return (
+    <div>
       <form onSubmit={handleFormSubmit}>
         <div>
           <label>Wiek</label>
@@ -114,23 +83,8 @@ const FillSurveyComponent = () => {
           <button type="submit">Submit</button>
         </div>
       </form>
-    );
-  };
-
-  return (
-    <div>
-      {renderForm()}
     </div>
   );
 };
 
 export default FillSurveyComponent;
-
-
-
-
-
-
-
-
-
