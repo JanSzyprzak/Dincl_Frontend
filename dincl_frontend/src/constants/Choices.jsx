@@ -98,7 +98,7 @@
     },
     {
         name: "personal_security_feeling",
-        label: "Poczucie bezpieczeństwa osobiście",
+        label: "Poczucie bezpieczeństwa osobistego",
         choices: RATING_CHOICES,
     },
     {

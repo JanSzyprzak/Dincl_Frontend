@@ -5,7 +5,7 @@ import { FORM_FIELDS } from "../constants/Choices.jsx";
 
 import "../index.css";
 
-const FillSurveyComponent = () => {
+const FillSurveyComponent = ( { onSurveySubmit, closeModal } ) => {
     const [formData, setFormData] = useState({
         age: "",
         gender: "",
@@ -27,37 +27,7 @@ const FillSurveyComponent = () => {
     const [currentStep, setCurrentStep] = useState(1);
     const [invalidFields, setInvalidFields] = useState([]);
 
-    const handleFormSubmit = (event) => {
-        event.preventDefault();
-
-        // Define the URL where the backend is expecting the POST request.
-        // Update this to your backend's URL
-        const backendUrl = "http://localhost:8000/api/v1/create-survey/";
-        console.log(formData);
-        // Use fetch API to make the POST request
-        fetch(backendUrl, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                return response.json();
-            })
-            .then((data) => {
-                console.log("Success:", data);
-                // Handle the response data or update state as needed
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-                // Handle any errors that occur during the fetch
-            });
-    };
-
+    
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData({
@@ -97,10 +67,35 @@ const FillSurveyComponent = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+    
         const currentInvalidFields = getInvalidFields(STEP2_FIELDS);
         setInvalidFields(currentInvalidFields);
+        
         if (currentInvalidFields.length === 0) {
-            // ... proceed with form submission logic
+            const backendUrl = "http://localhost:8000/api/v1/create-survey/";
+            console.log(formData);
+            
+            fetch(backendUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("Success:", data);
+                    onSurveySubmit();  // Show the flash message
+                    closeModal();      // Close the modal
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
         }
     };
 
@@ -109,7 +104,7 @@ const FillSurveyComponent = () => {
 
     return (
         <div>
-            <Form onSubmit={handleFormSubmit}>
+            <Form onSubmit={handleSubmit}>
                 {getFieldsForStep(currentStep).map((field) => (
                     <div key={field.name}>
                         <Form.Group

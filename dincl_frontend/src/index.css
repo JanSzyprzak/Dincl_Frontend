@@ -3,7 +3,7 @@
 }
 
 body {
-  background: rgb(253, 251, 247);
+  background: rgb(248, 247, 246);
   margin: 0;
   padding: 0;
   height: 100vh; /* Adjust height to viewport height */
@@ -11,6 +11,26 @@ body {
   display: flex; /* Add flex display */
   justify-content: center; /* Center children along the main axis (horizontally) */
   align-items: center; /* Center children along the cross axis (vertically) */
+}
+
+.main {
+  border-style: hidden;
+  height: 90vh;
+  overflow-y: auto;
+  padding: 1rem;
+  border-radius: 2% 2%;
+  background-color: white;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+
+}
+
+.main2 {
+  border-style:hidden;
+  padding: 1rem;
+  background-color: rgb(241, 240, 240);
+  border-radius: 1.5% 1.5%;
+
 }
 
 
@@ -45,8 +65,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-color: black;
-  border-style: dashed; 
+ 
   background-color: white;
  
   border-radius: 5% 5%;
@@ -54,10 +73,7 @@ body {
   margin-left: 1rem;
   margin-right: 1rem;
   
-  /*word-wrap: break-word; /* Break long words */
-  /*overflow-wrap: break-word; /* Same as word-wrap, newer name */
-  /*white-space: normal; /* Allow wrapping */
-  /*overflow: hidden; /* Hide any overflowing content */
+
   
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
@@ -69,13 +85,15 @@ body {
 
 .btncomponent2 {
   display: flex;
-  border-color: black;
-  border-style: dotted;
+ 
   justify-content: center;
   align-items: stretch;
   align-items: center;
   width: 100%;
   border-radius: 5% 5%;
+  margin: "1rem";
+  border-color: black;
+  border-style: dotted;
 
 }
 
@@ -84,6 +102,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .flex1 {
@@ -135,13 +154,9 @@ body {
 
 .modal {
   background-color: white;
-  padding: 20px;
+  padding: 10px 25px; /* 20px top and bottom, 50px left and right */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1001; /* Value higher than the overlay to ensure the modal is on top */
-  max-width: 50%; /* To ensure it doesn't take up the full width of the screen */
-  max-height: 100%; /* To ensure it doesn't take up the full height of the screen */
-  min-width: 30%;
-  min-height: 50%;
   overflow-y: auto; /* Scroll if content is too long */
   display: flex;
   justify-content: center;
@@ -150,7 +165,10 @@ body {
   top: 50%; /* center the modal vertically */
   left: 50%; /* center the modal horizontally */
   transform: translate(-50%, -50%); /* ensures true centering */
+  max-width: 50%;
+  max-height: 80%;
 }
+
 
 /* Base tooltip styling */
 .leaflet-tooltip {
@@ -168,5 +186,38 @@ body {
 
 .my-custom-tooltip {
   width: 300px;
-  height: 150px;
+  height: 210px;
+}
+
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-close:focus {
+  outline: none;
+}
+
+.flash-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.flash-modal-message {
+  z-index: 10000;
+  max-width: 500px;
 }
