@@ -9,8 +9,9 @@ const AllSurveysDataFetchComponent = () => {
   const [totalItems, setTotalItems] = useState(0); // State to store the total number of items
 
   useEffect(() => {
-    const apiUrl = 'http://127.0.0.1:8000/api/v1/dl/?format=json';
-    const countApiUrl = 'http://127.0.0.1:8000/api/v1/all_count?format=json'; // New API endpoint for fetching count
+    const apiUrl = `${import.meta.env.VITE_BACKEND_URL}/api/v1/dl/?format=json`;
+
+    const countApiUrl = `${import.meta.env.VITE_BACKEND_URL}/api/v1/all_count?format=json`; // New API endpoint for fetching count
 
     const fetchData = async () => {
       try {

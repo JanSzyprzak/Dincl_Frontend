@@ -16,7 +16,7 @@ const DinclMapComponent = () => {
 
     const fetchSurveyData = async (voivodship) => {
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/v1/fetch_survey_data/?format=json', { voivodship }); // Replace with your actual endpoint URL
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/fetch_survey_data/?format=json`, { voivodship }); // Replace with your actual endpoint URL
             setTooltipData(response.data);
 
         } catch (error) {

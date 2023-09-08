@@ -6,7 +6,7 @@ const EntriesCounterComponent = () => {
 
   useEffect(() => {
     // Notify the backend of a new visit and get the updated count.
-    fetch('http://127.0.0.1:8000/api/v1/register-visit/?format=json', {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/register-visit/?format=json`, {
       headers: {
           'Accept': 'application/json'
       }

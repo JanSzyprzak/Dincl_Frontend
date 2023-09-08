@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-
 import { FORM_FIELDS } from "../constants/Choices.jsx";
 
 import "../index.css";
@@ -72,7 +71,8 @@ const FillSurveyComponent = ( { onSurveySubmit, closeModal } ) => {
         setInvalidFields(currentInvalidFields);
         
         if (currentInvalidFields.length === 0) {
-            const backendUrl = "http://localhost:8000/api/v1/create-survey/";
+            const backendUrl = `${import.meta.env.VITE_BACKEND_URL}/api/v1/create-survey/`;
+;
             console.log(formData);
             
             fetch(backendUrl, {

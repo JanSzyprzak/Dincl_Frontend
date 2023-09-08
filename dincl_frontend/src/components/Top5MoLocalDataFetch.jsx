@@ -15,9 +15,9 @@ const Top5MonthlyDataFetchComponent = () => {
     const [totalItems, setTotalItems] = useState(0);
 
     useEffect(() => {
-        const apiUrl = "http://127.0.0.1:8000/api/v1/top5monthly/?format=json";
+        const apiUrl = `${import.meta.env.VITE_BACKEND_URL}/api/v1/top5monthly/?format=json`;
         const countApiUrl =
-            "http://127.0.0.1:8000/api/v1/top5_monthly_count?format=json";
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/top5_monthly_count?format=json`;
 
         const fetchData = async () => {
             try {
